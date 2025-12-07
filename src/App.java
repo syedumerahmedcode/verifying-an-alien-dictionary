@@ -1,3 +1,6 @@
+
+import java.util.Arrays;
+
 public class App {
     public static void main(String[] args) throws Exception {
         /**
@@ -20,5 +23,40 @@ public class App {
          * hence the sequence is unsorted.
          */
         System.out.println("Hello, World!");
+        Solution solution = new Solution();
+        String[] words = { "hello", "leetcode" };
+        String order = "hlabcdefgijkmnopqrstuvwxyz";
+
+        String[] secondSetofWords = { "word", "world", "row" };
+        String secondOrder = "worldabcefghijkmnpqstuvxyz";
+
+        String[] thirdSetofWords = { "will", "chris", "bat", "batwoman", "batman" };
+        String[] fourthSetofWords = { "will", "chris", "bat", "batman", "batwoman" };
+        String thirdOrder = "wcabdefhgjilknmopqrsuxtvyz";
+
+        boolean lexiographicallySorted = false;
+        lexiographicallySorted = solution.isAlienDictionarySorted(words, order);
+        System.out.println("The set of words is: " + Arrays.toString(words) + " and the order is: " + order
+                + ". Are they lexiographically sorted: " + lexiographicallySorted);
+        System.out.println();
+
+        lexiographicallySorted = solution.isAlienDictionarySorted(secondSetofWords, secondOrder);
+
+        System.out.println("The set of words is: " + Arrays.toString(
+                secondSetofWords) + " and the order is: " + secondOrder
+                + ". Are they lexiographically sorted: " + lexiographicallySorted);
+        System.out.println();
+
+        lexiographicallySorted = solution.isAlienDictionarySorted(thirdSetofWords, thirdOrder);
+        System.out.println("The set of words is: " + Arrays.toString(
+                thirdSetofWords) + " and the order is: " + thirdOrder
+                + ". Are they lexiographically sorted: " + lexiographicallySorted);
+
+        System.out.println();
+
+        lexiographicallySorted = solution.isAlienDictionarySorted(fourthSetofWords, thirdOrder);
+        System.out.println("The set of words is: " + Arrays.toString(
+                fourthSetofWords) + " and the order is: " + thirdOrder
+                + ". Are they lexiographically sorted: " + lexiographicallySorted);
     }
 }
